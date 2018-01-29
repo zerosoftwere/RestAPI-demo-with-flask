@@ -2,6 +2,7 @@ from abc import ABCMeta, abstractmethod
 
 class UserDOA(metaclass=ABCMeta):
     """Interface for User Objects to connect to data sources"""
+
     @abstractmethod
     def find_all(self):
         """Returns a list of all users from the database"""
@@ -29,7 +30,8 @@ class UserDOA(metaclass=ABCMeta):
 
 
 class MockUserDAO(UserDOA):
-    """Performs mock crud operation for User class"""
+    """Performs mock crud operation for User objects"""
+
     count = 0
     users = [
         {'id': count, 'username': 'xero', 'password': 'verysecure'}
